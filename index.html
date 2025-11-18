@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roasting Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator" id="calc">
+        <input type="text" id="display" readonly>
+        
+        <div class="buttons">
+
+            <button class="b7" onclick="press('7')">7</button>
+            <button class="b8" onclick="press('8')">8</button>
+            <button class="b9" onclick="press('9')">9</button>
+            <button class="bdiv" onclick="press('/')">/</button>
+
+            <button class="b4" onclick="press('4')">4</button>
+            <button class="b5" onclick="press('5')">5</button>
+            <button class="b6" onclick="press('6')">6</button>
+            <button class="bmul" onclick="press('*')">*</button>
+
+            <button class="b1" onclick="press('1')">1</button>
+            <button class="b2" onclick="press('2')">2</button>
+            <button class="b3" onclick="press('3')">3</button>
+            <button class="bminus" onclick="press('-')">-</button>
+
+            <button class="b0" onclick="press('0')">0</button>
+            <button class="bdot" onclick="press('.')">.</button>
+
+            <!-- Moving equals button -->
+            <button class="equals" onclick="calculate()">=</button>
+
+            <button class="bplus" onclick="press('+')">+</button>
+
+            <button class="clear" onclick="clearDisplay()">CLEAR</button>
+
+        </div>
+
+        <p id="roast"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

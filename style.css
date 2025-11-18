@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.calculator {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
+    box-shadow: 0 0 20px #000;
+    position: relative; /* needed so absolute = button stays inside */
+}
+
+#display {
+    width: 100%;
+    padding: 1px;
+    font-size: 22px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: #333;
+    color: #fff;
+}
+
+/* ⭐ LOCKED GRID LAYOUT */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    grid-template-areas:
+        "b7 b8 b9 bdiv"
+        "b4 b5 b6 bmul"
+        "b1 b2 b3 bminus"
+        "b0 bdot equals bplus"
+        "clear clear clear clear";
+}
+
+/* Grid area assignments */
+.b7 { grid-area: b7; }
+.b8 { grid-area: b8; }
+.b9 { grid-area: b9; }
+.bdiv { grid-area: bdiv; }
+
+.b4 { grid-area: b4; }
+.b5 { grid-area: b5; }
+.b6 { grid-area: b6; }
+.bmul { grid-area: bmul; }
+
+.b1 { grid-area: b1; }
+.b2 { grid-area: b2; }
+.b3 { grid-area: b3; }
+.bminus { grid-area: bminus; }
+
+.b0 { grid-area: b0; }
+.bdot { grid-area: bdot; }
+.equals { grid-area: equals; }
+.bplus { grid-area: bplus; }
+
+.clear { grid-area: clear; }
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background: #444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #666;
+}
+
+.clear {
+    background: #b30000;
+}
+
+#roast {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ff6666;
+    min-height: 20px;
+}
+
+/* ⭐ Equals button starts locked in place */
+.equals {
+    position: relative;
+    transition: left 0.2s ease, top 0.2s ease;
+    z-index: 999;
+}
